@@ -19,6 +19,7 @@
   "homepage": "https://github.com/AnthonyA88/Project01#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "ejs-layout": "^1.0.15",
     "express": "^4.16.2",
     "mongoose": "^4.12.3"
   }
