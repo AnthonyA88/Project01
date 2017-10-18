@@ -1,5 +1,15 @@
-var express = require('express'),
-app = express();
+var express = require('express');
+var ejs_layout = require('ejs-layouts');
+var app = express();
+
+app.configure(function(){
+  app.set('views', __dirname + '/views');
+  app.set('view engine', 'ejs');
+  app.use(ejs_layout.express);
+  app.use(app.router);
+});
+
+
 
 
 var bodyParser = require('body-parser');
@@ -53,7 +63,7 @@ app.get('/api/shows', function apiShow(req, res) {
       if (err) {
         return console.log("index error: " + err);
       }
-      res.json(allShows);
+      res.render('index', {shows:shows});
     });
 });
 
